@@ -1,6 +1,8 @@
 package com.example.lenarlayout
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,11 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    //funcio de lalamdo a otra actividad.
+    fun llamarActivi(view: View){
+        val i = Intent(this, inicio::class.java)
+        startActivity(i)
     }
 }
