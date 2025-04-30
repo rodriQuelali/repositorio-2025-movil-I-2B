@@ -1,4 +1,4 @@
-package com.example.materialdesding
+package com.example.examplo_poo1
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -16,8 +16,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-
-
     }
+
+
 }
