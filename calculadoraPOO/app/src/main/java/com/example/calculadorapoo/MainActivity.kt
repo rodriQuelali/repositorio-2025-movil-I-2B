@@ -30,6 +30,34 @@ class MainActivity : AppCompatActivity() {
         val tvResul = findViewById<TextView>(R.id.tv1)
         val btnS = findViewById<Button>(R.id.btnSumar)
 
+        /*
+        * Confeccionar la siguiente ejercicio:
+        *
+        * POO - Calculadora
+        * Sobrecarga de metodos.
+        *
+        * Resta
+        * Multiplicacion
+        * Division
+        *
+        * Imput:
+        * a = 2
+        * b = 2
+        *
+        * a = 2
+        * b = 2.4
+        *
+        * OUTPUT
+        * resta : 0
+        * Multplicacion: 4
+        * Divisio: 1
+        *
+        * resta : -0.4
+        * Multplicacion: 4.8
+        * Divisio: 1.2
+        *
+        * */
+
         btnS.setOnClickListener{
             //creando el objeto
             val cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
