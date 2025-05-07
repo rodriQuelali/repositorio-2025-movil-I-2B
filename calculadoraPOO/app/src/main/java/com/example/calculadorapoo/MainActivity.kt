@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.calculadorapoo.data.Calculadora
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -25,15 +26,20 @@ class MainActivity : AppCompatActivity() {
 
 
         val et1 = findViewById<TextInputEditText>(R.id.et1)
-        val et2 = findViewById<TextInputEditText>(R.id.et1)
+        val et2 = findViewById<TextInputEditText>(R.id.et2)
         val tvResul = findViewById<TextView>(R.id.tv1)
         val btnS = findViewById<Button>(R.id.btnSumar)
 
         btnS.setOnClickListener{
-            val nro1:Int = et1.text.toString().toInt()
-            val nro2:Int = et2.text.toString().toInt()
-            val tota:Int = nro2+nro1
-            tvResul.text = tota.toString()
+            //creando el objeto
+            val cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
+            //intancia
+            //cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
+            //llamar a al metodo suma
+            //cal1.sumar()
+
+            //val tota:Int = et1.text.toString().toInt()+et2.text.toString().toInt()
+            tvResul.text = "Total de suma: ${cal1.sumar().toString()}"
 
         }
 
