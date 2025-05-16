@@ -1,5 +1,6 @@
 package com.example.calculadorapoo
 
+import com.example.calculadorapoo.data.Calculadora
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,6 +13,7 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val cal = Calculadora()
+        assertEquals(7, cal.suma(5,2))
     }
 }

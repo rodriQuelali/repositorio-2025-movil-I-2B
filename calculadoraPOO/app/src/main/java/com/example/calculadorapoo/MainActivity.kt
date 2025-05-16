@@ -60,14 +60,34 @@ class MainActivity : AppCompatActivity() {
 
         btnS.setOnClickListener{
             //creando el objeto
-            val cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
+            val cal1 = Calculadora()
+
+            val txt1 = et1.text.toString()
+            val txt2 = et2.text.toString()
+
+            val num1 = et1.text.toString().toFloat()
+
+            //
+
+            if (txt1.contains(".") || txt2.contains(".")){
+                val resul:Float = cal1.suma(et1.text.toString().toFloat(), et2.text.toString().toFloat())
+                if (resul.toString().contains(".0")){
+                    tvResul.text = resul.toInt().toString()
+                }else{
+                    tvResul.text = resul.toString()
+                }
+                //tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toFloat(), et2.text.toString().toFloat()).toString()}"
+
+            }else{
+                tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toInt(), et2.text.toString().toInt()).toString()}"
+            }
+
             //intancia
             //cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
             //llamar a al metodo suma
             //cal1.sumar()
 
-            //val tota:Int = et1.text.toString().toInt()+et2.text.toString().toInt()
-            tvResul.text = "Total de suma: ${cal1.sumar().toString()}"
+
 
         }
 
