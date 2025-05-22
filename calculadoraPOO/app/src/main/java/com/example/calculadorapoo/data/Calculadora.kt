@@ -8,20 +8,16 @@ class Calculadora {
     }*/
 
 
-    public final fun suma(a: String, b: String):Float{
+    fun suma(a: String, b: String): String{
         if (a.contains(".") || b.contains(".")){
             val resul:Float = a.toFloat() + b.toFloat()
             if (resul.toString().contains(".0")){
-                return resul
-                //tvResul.text = resul.toInt().toString()
-            }else{
-                return resul
-                //tvResul.text = resul.toString()
+                return resul.toInt().toString()
             }
-        }else{
-            return a.toFloat() + b.toFloat()
-            //tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toInt(), et2.text.toString().toInt()).toString()}"
+                return resul.toString()
         }
+        val resul:Int = a.toInt() + b.toInt()
+        return resul.toString()
 
     }
 

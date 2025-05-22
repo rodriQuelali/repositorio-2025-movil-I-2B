@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
 
             val num1 = et1.text.toString().toFloat()
 
-            val resul:Float = cal1.suma(et1.text.toString(), et2.text.toString())
+            val resul: String = cal1.suma(et1.text.toString(), et2.text.toString())
 
             tvResul.text = resul.toString()
 
