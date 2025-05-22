@@ -8,16 +8,29 @@ class Calculadora {
     }*/
 
 
-    fun suma(a: Int, b: Int):Int{
-        return a + b
+    public final fun suma(a: String, b: String):Float{
+        if (a.contains(".") || b.contains(".")){
+            val resul:Float = a.toFloat() + b.toFloat()
+            if (resul.toString().contains(".0")){
+                return resul
+                //tvResul.text = resul.toInt().toString()
+            }else{
+                return resul
+                //tvResul.text = resul.toString()
+            }
+        }else{
+            return a.toFloat() + b.toFloat()
+            //tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toInt(), et2.text.toString().toInt()).toString()}"
+        }
+
     }
 
     //sobrecarga de metodos
 
 
-    fun suma(a :Float, b:Float): Float{
-        return a + b
-    }
+    //public final fun suma(a :String, b:String): Int{
+      //  return a.toInt() + b.toInt()
+    //}
 
     /*
     * c#

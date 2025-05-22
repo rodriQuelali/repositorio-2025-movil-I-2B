@@ -67,32 +67,11 @@ class MainActivity : AppCompatActivity() {
 
             val num1 = et1.text.toString().toFloat()
 
-            //
+            val resul:Float = cal1.suma(et1.text.toString(), et2.text.toString())
 
-            if (txt1.contains(".") || txt2.contains(".")){
-                val resul:Float = cal1.suma(et1.text.toString().toFloat(), et2.text.toString().toFloat())
-                if (resul.toString().contains(".0")){
-                    tvResul.text = resul.toInt().toString()
-                }else{
-                    tvResul.text = resul.toString()
-                }
-                //tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toFloat(), et2.text.toString().toFloat()).toString()}"
-
-            }else{
-                tvResul.text = "Total de suma: ${cal1.suma(et1.text.toString().toInt(), et2.text.toString().toInt()).toString()}"
-            }
-
-            //intancia
-            //cal1 = Calculadora(et1.text.toString().toInt(),et2.text.toString().toInt())
-            //llamar a al metodo suma
-            //cal1.sumar()
-
-
+            tvResul.text = resul.toString()
 
         }
-
-
-
 
     }
 }
