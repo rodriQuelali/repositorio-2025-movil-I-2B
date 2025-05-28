@@ -6,17 +6,20 @@ class Calculadora {
 
     //suma --- sumar solo eso.
     //SaberEnteroFloat ---
+    //con las A, B verofocar
+    // con el resultado, manteniendo el float.
     fun suma(a: String, b: String): String{
-        if (a.contains(".") || b.contains(".")){
-            val resul:Float = a.toFloat() + b.toFloat()
-            if (resul.toString().contains(".0")){
-                return resul.toInt().toString()
-            }
-                return resul.toString()
-        }
-        val resul:Int = a.toInt() + b.toInt()
-        return resul.toString()
+        val res = a.toFloat() + b.toFloat()
+        val resString =saberEnteroFloat(res.toString())
+        return resString
+    }
 
+    private fun saberEnteroFloat(res: String):String{
+        val test = res.toFloat()
+        if (test % 1.0f == 0.0f){
+            return res.toInt().toString()
+        }
+        return res.toString()
     }
 
 
