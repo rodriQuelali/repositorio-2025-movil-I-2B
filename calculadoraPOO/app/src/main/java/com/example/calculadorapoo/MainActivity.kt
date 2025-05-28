@@ -59,16 +59,8 @@ class MainActivity : AppCompatActivity() {
         * */
 
         btnS.setOnClickListener{
-            //creando el objeto
-            val cal1 = Calculadora()
 
-            val txt1 = et1.text.toString()
-            val txt2 = et2.text.toString()
-
-            val num1 = et1.text.toString().toFloat()
-
-            val resul: String = cal1.suma(et1.text.toString(), et2.text.toString())
-
+            val resul: String = Calculadora().suma(et1.text.toString(), et2.text.toString())
             tvResul.text = resul.toString()
 
         }
