@@ -16,10 +16,7 @@ class Calculadora {
 
     private fun saberEnteroFloat(res: String):String{
         val test = res.toFloat()
-        if (test % 1.0f == 0.0f){
-            return res.toInt().toString()
-        }
-        return res.toString()
+        return if (test % 1.0f == 0.0f) res.toInt().toString() else res.toString()
     }
 
 

@@ -14,6 +14,6 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         val cal = Calculadora()
-        assertEquals("7.5", cal.suma("5.0","2.5"))
+        assertEquals("7.5", cal.suma("5.a","2.5"))
     }
 }
