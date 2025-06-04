@@ -2,24 +2,16 @@ package com.example.calculadorapoo.data
 
 class Calculadora {
 
-
-
-    //suma --- sumar solo eso.
-    //SaberEnteroFloat ---
-    //con las A, B verofocar
-    // con el resultado, manteniendo el float.
-    fun suma(a: String, b: String): String{
-        val res = a.toFloat() + b.toFloat()
-        val resString =saberEnteroFloat(res.toString())
+    fun suma(a: Double, b: Double): String{
+        val res = a + b
+        val resString =saberEnteroFloat(res)
         return resString
     }
 
-    private fun saberEnteroFloat(res: String):String{
+    private fun saberEnteroFloat(res: Double):String{
         val test = res.toFloat()
         return if (test % 1.0f == 0.0f) res.toInt().toString() else res.toString()
     }
-
-
 
 
 }

@@ -2,7 +2,6 @@ package com.example.calculadorapoo
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +9,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.calculadorapoo.data.Calculadora
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         btnS.setOnClickListener{
 
-            val resul: String = Calculadora().suma(et1.text.toString(), et2.text.toString())
+            val resul: String = Calculadora().suma(et1.text.toString().toDouble(), et2.text.toString().toDouble())
             tvResul.text = resul.toString()
 
         }
