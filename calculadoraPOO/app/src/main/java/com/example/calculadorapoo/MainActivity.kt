@@ -26,41 +26,40 @@ class MainActivity : AppCompatActivity() {
         val et1 = findViewById<TextInputEditText>(R.id.et1)
         val et2 = findViewById<TextInputEditText>(R.id.et2)
         val tvResul = findViewById<TextView>(R.id.tv1)
-        val btnS = findViewById<Button>(R.id.btnSumar)
+        //val btnS = findViewById<Button>(R.id.btnSumar)
 
-        /*
-        * Confeccionar la siguiente ejercicio:
-        *
-        * POO - Calculadora
-        * Sobrecarga de metodos.
-        *
-        * Resta
-        * Multiplicacion
-        * Division
-        *
-        * Imput:
-        * a = 2
-        * b = 2
-        *
-        * a = 2
-        * b = 2.4
-        *
-        * OUTPUT
-        * resta : 0
-        * Multplicacion: 4
-        * Divisio: 1
-        *
-        * resta : -0.4
-        * Multplicacion: 4.8
-        * Divisio: 1.2
-        *
-        * */
+        val btnS = findViewById<Button>(R.id.btS)
+        val btnR = findViewById<Button>(R.id.btR)
+        val btnM = findViewById<Button>(R.id.btM)
+        val btnD = findViewById<Button>(R.id.btD)
+
+        val btnUno = findViewById<Button>(R.id.btUno)
+
+        var txt=""
+        btnUno.setOnClickListener {
+            txt += "1"
+            et1.setText(txt)
+        }
+
 
         btnS.setOnClickListener{
-
             val resul: String = Calculadora().suma(et1.text.toString().toDouble(), et2.text.toString().toDouble())
             tvResul.text = resul.toString()
+        }
 
+        btnR.setOnClickListener{
+            val resul: String = Calculadora().resta(et1.text.toString().toDouble(), et2.text.toString().toDouble())
+            tvResul.text = resul.toString()
+        }
+
+        btnM.setOnClickListener{
+            val resul: String = Calculadora().multi(et1.text.toString().toDouble(), et2.text.toString().toDouble())
+            tvResul.text = resul.toString()
+        }
+
+        btnD.setOnClickListener{
+            val resul: String = Calculadora().divi(et1.text.toString().toDouble(), et2.text.toString().toDouble())
+            tvResul.text = resul.toString()
         }
 
     }
