@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,15 +27,20 @@ class RadioCkeck : AppCompatActivity() {
         val rbSuma = findViewById<RadioButton>(R.id.rbSuma)
         val rbResta = findViewById<RadioButton>(R.id.rbResta)
 
+        val chSuma = findViewById<CheckBox>(R.id.chSuma)
+        val chResta = findViewById<CheckBox>(R.id.chResta)
+
         val txt1 = findViewById<EditText>(R.id.txt1)
         val txt2 = findViewById<EditText>(R.id.edtxt2)
 
         val tvR = findViewById<TextView>(R.id.tvResul)
 
-        val btnOpe = findViewById<Button>(R.id.btnOpeRadio)
 
 
-        btnOpe.setOnClickListener {
+
+
+
+        rbSuma.setOnClickListener {
             if(rbSuma.isChecked == true){
                 tvR.text = Calculadora().suma(txt2.text.toString().toDouble(), txt1.text.toString().toDouble()).toString()
             }
@@ -43,5 +49,34 @@ class RadioCkeck : AppCompatActivity() {
                 tvR.text = Calculadora().resta(txt2.text.toString().toDouble(), txt1.text.toString().toDouble())
             }
         }
+
+        rbResta.setOnClickListener {
+            if(rbSuma.isChecked == true){
+                tvR.text = Calculadora().suma(txt2.text.toString().toDouble(), txt1.text.toString().toDouble()).toString()
+            }
+
+            if(rbResta.isChecked == true){
+                tvR.text = Calculadora().resta(txt2.text.toString().toDouble(), txt1.text.toString().toDouble())
+            }
+        }
+
+        var resul: String = ""
+
+        chResta.setOnClickListener {
+            if(chResta.isChecked == true){
+                resul += "La resta es: ${Calculadora().resta(txt2.text.toString().toDouble(), txt1.text.toString().toDouble()).toString()} \n"
+            }
+            tvR.text = resul
+        }
+
+        chSuma.setOnClickListener {
+            if(chSuma.isChecked == true){
+                resul += "la suma es: ${Calculadora().suma(txt2.text.toString().toDouble(), txt1.text.toString().toDouble()).toString()}\n"
+            }
+            tvR.text = resul
+        }
+
+
+
     }
 }
