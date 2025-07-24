@@ -31,5 +31,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Radio y Check" />
+
+        <Button
+            android:id="@+id/btnSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spinner" />
+
+        <Button
+            android:id="@+id/ListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ListView" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

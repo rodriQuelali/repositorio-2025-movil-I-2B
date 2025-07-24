@@ -21,6 +21,8 @@ class Home : AppCompatActivity() {
 
         val btnCal= findViewById<Button>(R.id.btnCal)
         val btnRC= findViewById<Button>(R.id.btnRarioCheck)
+        val btnSpinner = findViewById<Button>(R.id.btnSpinner)
+        val btnListView = findViewById<Button>(R.id.ListView)
 
         btnCal.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)
@@ -29,6 +31,16 @@ class Home : AppCompatActivity() {
 
         btnRC.setOnClickListener {
             val i = Intent(this, RadioCkeck::class.java)
+            startActivity(i)
+        }
+
+        btnSpinner.setOnClickListener {
+            val i= Intent(this, spinner::class.java)
+            startActivity(i)
+        }
+
+        btnListView.setOnClickListener {
+            val i = Intent(this, ListView::class.java)
             startActivity(i)
         }
     }
