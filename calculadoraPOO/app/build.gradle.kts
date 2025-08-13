@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true // Habilitamos View Binding para facilitar el acceso a las vistas
+    }
 }
 
 dependencies {

@@ -1,8 +1,7 @@
-package com.example.calculadorapoo
+package com.example.calculadorapoo.view
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -11,9 +10,9 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.calculadorapoo.R
 
 class spinner : AppCompatActivity() {
     private lateinit var spinner:Spinner

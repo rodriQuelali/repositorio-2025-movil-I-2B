@@ -1,4 +1,4 @@
-package com.example.calculadorapoo
+package com.example.calculadorapoo.view
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.calculadorapoo.R
 import com.example.calculadorapoo.data.Pais
 
 class ListView : AppCompatActivity() {
