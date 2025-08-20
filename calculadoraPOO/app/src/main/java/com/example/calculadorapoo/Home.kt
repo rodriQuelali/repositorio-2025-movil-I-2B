@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.calculadorapoo.view.ListView
 import com.example.calculadorapoo.view.MainActivity
 import com.example.calculadorapoo.view.RadioCkeck
+import com.example.calculadorapoo.view.RecircleirViewButtonImg
 import com.example.calculadorapoo.view.RecircleyViewHome
 import com.example.calculadorapoo.view.spinner
 
@@ -30,6 +31,7 @@ class Home : AppCompatActivity() {
         val btnSpinner = findViewById<Button>(R.id.btnSpinner)
         val btnListView = findViewById<Button>(R.id.ListView)
         val btnRecircleyView = findViewById<Button>(R.id.btnViewRecircleyView)
+        val btnReImg = findViewById<Button>(R.id.btnRecirImgBut)
 
         btnCal.setOnClickListener {
             val i = Intent(this, MainActivity::class.java)
@@ -53,6 +55,11 @@ class Home : AppCompatActivity() {
 
         btnRecircleyView.setOnClickListener {
             val i = Intent(this, RecircleyViewHome::class.java)
+            startActivity(i)
+        }
+
+        btnReImg.setOnClickListener {
+            val i = Intent(this, RecircleirViewButtonImg::class.java)
             startActivity(i)
         }
     }

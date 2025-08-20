@@ -30,7 +30,7 @@ class RecircleyViewHome : AppCompatActivity() {
         }
 
         // 1. Preparar los datos
-        val names: List<Pais> = listOf(Pais("Bolivia", 12455555))
+        val names: List<Pais> = listOf(Pais("Bolivia", 12455555), Pais("Peru", 2555555))
         rViewRecircley = findViewById(R.id.rViewRecircley)
         rViewRecircley.layoutManager = LinearLayoutManager(this)
 

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.calculadorapoo"
+    namespace = "com.example.myapplicationempleado"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.calculadorapoo"
+        applicationId = "com.example.myapplicationempleado"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -33,10 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-
-    buildFeatures {
-        viewBinding = true // Habilitamos View Binding para facilitar el acceso a las vistas
-    }
 }
 
 dependencies {
@@ -46,10 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
