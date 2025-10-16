@@ -28,15 +28,12 @@ class RecircleyViewHome : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         // 1. Preparar los datos
         val names: List<Pais> = listOf(Pais("Bolivia", 12455555), Pais("Peru", 2555555))
         rViewRecircley = findViewById(R.id.rViewRecircley)
         rViewRecircley.layoutManager = LinearLayoutManager(this)
-
         // 3. Crear una instancia de nuestro adaptador
         val adapter = AdapterName(names)
-
         // 4. Asignar el adaptador al RecyclerView
         rViewRecircley.adapter = adapter
     }

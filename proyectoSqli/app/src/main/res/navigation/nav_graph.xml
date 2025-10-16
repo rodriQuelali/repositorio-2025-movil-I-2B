@@ -1,0 +1,22 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registroUsuarioFragment">
+
+
+<fragment
+        android:id="@+id/registroUsuarioFragment"
+        android:name="com.example.proyectosqli.ui.usuario.RegistroUsuario"
+        android:label="Registro de Usuario"
+        tools:layout="@layout/fragment_registro_usuario" />
+
+    <fragment
+        android:id="@+id/listaUsuarioFragment"
+        android:name="com.example.proyectosqli.ui.usuario.ListaUsuario"
+        android:label="Lista de Usuarios"
+        tools:layout="@layout/fragment_lista_usuario" />
+
+</navigation>
+
+

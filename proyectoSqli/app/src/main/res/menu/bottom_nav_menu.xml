@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/registroUsuarioFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Registrar" />
+    <item
+        android:id="@+id/listaUsuarioFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Lista" />
+</menu>
+

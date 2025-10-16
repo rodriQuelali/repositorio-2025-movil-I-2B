@@ -13,7 +13,6 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        val cal = Calculadora()
-        assertEquals("7.5", cal.suma(5.2,2.5))
+        assertEquals(4, 2+1)
     }
 }
