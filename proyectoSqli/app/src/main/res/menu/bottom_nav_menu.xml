@@ -7,5 +7,9 @@
         android:id="@+id/listaUsuarioFragment"
         android:icon="@drawable/ic_launcher_foreground"
         android:title="Lista" />
+    <item
+        android:id="@+id/CuentaFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="Cuenta" />
 </menu>
 

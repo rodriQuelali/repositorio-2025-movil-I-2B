@@ -17,6 +17,12 @@
         android:label="Lista de Usuarios"
         tools:layout="@layout/fragment_lista_usuario" />
 
+    <fragment
+        android:id="@+id/CuentaFragment"
+        android:name="com.example.proyectosqli.ui.usuario.CuentaFragment"
+        android:label="Lista de Usuarios"
+        tools:layout="@layout/fragment_cuenta" />
+
 </navigation>
 
 
