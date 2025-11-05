@@ -1,17 +1,53 @@
 package com.example.proyectosqli.model
 
-class DataSourceUsuario {
+import android.content.ContentValues
+import android.content.Context
 
-    //insert
-    //delete
-    //update
-    //lista
-    // otras operaciones mas ....
+class DataSourceUsuario(context: Context) {
+    //apen/closed
+    private val admin = AdminSQLiteOpenHelper(context)
+
+    //val usuer2 = Usuario(nombre="rodir", correo = "gemail.com", password = "123456789")
 
     //registro
-    fun registroUsuarioDataSource(usuario: Usuario){
+    //insert
+    fun registroUsuarioDataSource(usuario: Usuario): Long{
 
-        val admin = AdminSQLiteOpenHelper(this,"administracion", null, 1)
+        val bd = admin.writableDatabase
+        val registro = ContentValues()
+        registro.put("nombre", usuario.getNombre())
+        registro.put("correo", usuario.getCorreo())
+        registro.put("password", usuario.getPassword())
+        val dataResult = bd.insert("usuario", null, registro)
+        bd.close()
+        return dataResult
 
     }
+
+    //delete
+    fun eliminarUsuario(codigo: Int):Int{
+
+        val bd = admin.writableDatabase
+        val cant = bd.delete("usuario", "id_usuario=${codigo.toString()}", null)
+        bd.close()
+        return cant
+    }
+
+    //update
+    fun actulizarUsuario(usuario: Usuario):Int{
+        val bd = admin.writableDatabase
+        val registro = ContentValues()
+        registro.put("nombre", usuario.getNombre())
+        registro.put("correo", usuario.getCorreo())
+        registro.put("password", usuario.getPassword())
+        val cant = bd.update("usuario", registro, "id_usuario=${usuario.getCodigo().toString()}", null)
+        bd.close()
+        return cant
+    }
+
+    //lista
+
+    // otras operaciones mas ....
+
+
 }
