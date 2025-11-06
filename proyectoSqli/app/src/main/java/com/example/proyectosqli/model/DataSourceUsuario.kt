@@ -46,6 +46,26 @@ class DataSourceUsuario(context: Context) {
     }
 
     //lista
+    fun listarUsuarios(): List<Usuario> {
+        val db = admin.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM usuario", null)
+        val lista = mutableListOf<Usuario>()
+
+        if (cursor.moveToFirst()) {
+            do {
+                lista.add(
+                    Usuario(
+                        codigo = cursor.getInt(cursor.getColumnIndexOrThrow("codigo")),
+                        nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                        correo = cursor.getString(cursor.getColumnIndexOrThrow("correo")),
+                        password = cursor.getString(cursor.getColumnIndexOrThrow("password"))
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return lista
+    }
 
     // otras operaciones mas ....
 
