@@ -61,8 +61,6 @@ class RegistroUsuario : Fragment() {
             viewModel.registroViewModel(alan)
         }
 
-
-
         viewModel.mensaje.observe(viewLifecycleOwner, Observer {
             tvMensaje.text = it
         })

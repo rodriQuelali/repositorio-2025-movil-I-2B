@@ -55,7 +55,7 @@ class DataSourceUsuario(context: Context) {
             do {
                 lista.add(
                     Usuario(
-                        codigo = cursor.getInt(cursor.getColumnIndexOrThrow("codigo")),
+                        codigo = cursor.getInt(cursor.getColumnIndexOrThrow("id_usuario")),
                         nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
                         correo = cursor.getString(cursor.getColumnIndexOrThrow("correo")),
                         password = cursor.getString(cursor.getColumnIndexOrThrow("password"))
