@@ -36,6 +36,8 @@ class RecircleyViewHome : AppCompatActivity() {
         val adapter = AdapterName(names)
         // 4. Asignar el adaptador al RecyclerView
         rViewRecircley.adapter = adapter
+
+
     }
 
 }
