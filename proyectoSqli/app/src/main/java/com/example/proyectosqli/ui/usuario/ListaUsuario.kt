@@ -5,7 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectosqli.R
+import com.example.proyectosqli.adapter.UsuarioAdapter
+import com.example.proyectosqli.model.Usuario
+import com.example.proyectosqli.viewModel.UsuarioViewModel
+import kotlin.getValue
+import kotlin.text.ifEmpty
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +32,10 @@ class ListaUsuario : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+//global de todos mis metod de mi viewModelUsuario
+    private val viewModel: UsuarioViewModel by viewModels()
+    private lateinit var adapterUsuario: UsuarioAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +49,39 @@ class ListaUsuario : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_usuario, container, false)
+        val view = inflater.inflate(R.layout.fragment_lista_usuario, container, false)
+
+
+        val rViewRecircley = view.findViewById<RecyclerView>(R.id.recyclerUsuarios)
+        rViewRecircley.layoutManager = LinearLayoutManager(requireContext())
+
+
+        adapterUsuario = UsuarioAdapter(emptyList(),
+            onEditar = {usuario -> mostrarDialogEditar(usuario)},
+            onEliminar = { usuario -> viewModel.eliminarUsuario(usuario.getCodigo())}
+        )
+
+        rViewRecircley?.adapter = adapterUsuario
+
+        viewModel.mensaje.observe(viewLifecycleOwner, Observer {
+            //tvMensaje.text = it
+            Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
+        })
+
+        viewModel.usuarios.observe(viewLifecycleOwner, Observer { lista ->
+            adapterUsuario.updateLista(lista)
+        })
+
+        viewModel.cargarUsuarioViewModel()
+        return view
+    }
+
+    private fun mostrarDialogEditar(usuario: Usuario){
+        val dialog = UsuarioEditDialog(usuario){ actulizar ->
+            viewModel.actulizarUsuario(actulizar)
+        }
+        dialog.show(parentFragmentManager, "editarUsuario")
+
     }
 
     companion object {

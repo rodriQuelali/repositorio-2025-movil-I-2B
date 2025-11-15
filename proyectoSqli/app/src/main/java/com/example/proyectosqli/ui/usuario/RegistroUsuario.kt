@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -13,6 +14,7 @@ import androidx.lifecycle.Observer
 import com.example.proyectosqli.R
 import com.example.proyectosqli.model.Usuario
 import com.example.proyectosqli.viewModel.UsuarioViewModel
+import com.google.android.material.textfield.TextInputEditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,11 +56,17 @@ class RegistroUsuario : Fragment() {
         val btnRegistrar = view.findViewById<Button>(R.id.btnRegister)
         val tvMensaje = view.findViewById<TextView>(R.id.tvMensaje)
 
+        val txtN = view.findViewById<TextInputEditText>(R.id.etNombre)
+        val txtC = view.findViewById<TextInputEditText>(R.id.etCorreo)
+        val txtP = view.findViewById<TextInputEditText>(R.id.etPassword)
 
-        val alan = Usuario(nombre = "alan", correo = "ala@gmail.com", password = "123456")
+
 
         btnRegistrar.setOnClickListener {
-            viewModel.registroViewModel(alan)
+            viewModel.registroViewModel(Usuario(
+                nombre = txtN.text.toString(),
+                correo = txtC.text.toString(),
+                password = txtP.text.toString()))
         }
 
         viewModel.mensaje.observe(viewLifecycleOwner, Observer {

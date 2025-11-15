@@ -1,6 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ProyectoSqli" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Tema noche -->
+
+            <item name="colorPrimary">#CC6600</item>
+            <item name="colorSecondary">@android:color/holo_blue_light</item>
+
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>

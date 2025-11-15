@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText android:id="@+id/etNombre" android:hint="Nombre"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/etCorreo" android:hint="Correo"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <EditText android:id="@+id/etPassword" android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

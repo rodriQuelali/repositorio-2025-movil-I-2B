@@ -14,4 +14,12 @@ class RepositoryUsuario (context: Context){
         return dataSourceUsuario.listarUsuarios()
     }
 
+    fun updateRepository(usuario: Usuario):Int{
+        return dataSourceUsuario.actulizarUsuario(usuario)
+    }
+
+    fun deteleRepository(id: Int):Int{
+        return dataSourceUsuario.eliminarUsuario(id)
+    }
+
 }

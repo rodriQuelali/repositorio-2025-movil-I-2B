@@ -33,6 +33,12 @@
             android:text="correo@ejemplo.com"
             android:textColor="?attr/colorOnSurfaceVariant" />
 
+        <Button android:id="@+id/btnEditar" android:text="Editar"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+        <Button android:id="@+id/btnEliminar" android:text="Eliminar"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

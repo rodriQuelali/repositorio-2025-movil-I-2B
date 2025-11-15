@@ -36,6 +36,29 @@ class UsuarioViewModel(application: Application): AndroidViewModel(application) 
         usuarios.value = repositoryUsuario.listaUsuarioRepository()
     }
 
+    //delte
 
+    fun eliminarUsuario(codigo:Int){
+        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>$codigo")
+        val filas = repositoryUsuario.deteleRepository(codigo)
+        mensaje.value = if (filas > 0) "Usuario eliminado" else "No se encontró el usuario"
+        cargarUsuarioViewModel()
+    }
+
+    //update
+
+    fun actulizarUsuario(usuario: Usuario){
+        if(usuario.getNombre().isEmpty() || usuario.getCorreo().isEmpty() || usuario.getPassword().isEmpty()){
+            mensaje.value = "Llenar los campos..."
+            return
+        }
+        val data = repositoryUsuario.updateRepository(usuario)
+        if(data > 0){
+            mensaje.value = "actualizacion correcto....."
+            cargarUsuarioViewModel()
+        }else{
+            mensaje.value = "Error al editar SQLi..."
+        }
+    }
 
 }
